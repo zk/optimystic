@@ -1,10 +1,6 @@
-# Exported Figment test convo
+# Knuth Optimystic Benchmark
 
-## System message
-
-
-
-## About
+Donald Knuth posed 20 questions to ChatGPT (3.5) and critiqued the responses. The questions were posed again against GPT4, resposnes below.
 
 Timestamp: 2023-05-21T22:10:08.293Z
 
@@ -12,11 +8,47 @@ Model: GPT-4
 
 ## Conversation
 
-user:
+### 1. Tell me what Donald Knuth says to Stephen Wolfram about chatGPT.
 
-Tell me what Donald Knuth says to Stephen Wolfram about chatGPT.
+Original answer:
 
-assistant:
+1: I'm sorry, but I don't have any information about a conversation
+between Donald Knuth and Stephen Wolfram regarding ChatGPT. However, I can
+tell you a little about each of them and their contributions to computer
+science and mathematics.
+
+Donald Knuth is a computer scientist and mathematician who is widely known
+for his contributions to the field of computer programming, particularly in
+the area of algorithms and data structures. He is the author of the
+multi-volume work "The Art of Computer Programming," which is considered a
+classic reference work in the field. Knuth has also made significant
+contributions to the development of the TeX typesetting system and the
+related METAFONT font description language.
+
+Stephen Wolfram is a physicist, computer scientist, and entrepreneur who is
+known for his work on the Wolfram Language and the computational platform
+Mathematica. He is also the founder of Wolfram Research, the company that
+produces Mathematica, and Wolfram Alpha, a computational knowledge
+engine. Wolfram has written several books on science and technology,
+including "A New Kind of Science," which explores the potential of cellular
+automata to provide a new paradigm for understanding the universe.
+
+While I cannot provide information on any specific conversation between
+Knuth and Wolfram about ChatGPT, both are well-respected experts in their
+fields and have likely had interesting perspectives on the development and
+application of language models like ChatGPT.
+
+Critique:
+
+It's hard to fault #1 in any way, except that it thinks I was
+only a "significant contributor" to TeX development. Maybe
+that's a majority view? Anyway I'm glad it put TAOCP first.
+Similarly, you have apparently only "worked on" Mathematica, etc.
+
+Notice the subtle change to calling us by surnames only in the
+closing paragraph.
+
+Updated answer:
 
 As an AI language model, I cannot provide real-time interactions or conversations between individuals, but I can provide some speculation based on their interests and previous work.
 
@@ -26,11 +58,41 @@ Knuth and Wolfram could potentially discuss the potential of incorporating eleme
 
 One could imagine Knuth expressing interest in the technical details of ChatGPT while offering suggestions based on his expertise. Wolfram may discuss potential use cases and how the chatbot could be integrated into existing Wolfram Language or Mathematica products. However, as a language model, I cannot provide exact statements or conversations that may have taken place between these individuals about ChatGPT.
 
-user:
 
-Tell me what Stephen Wolfram says to Donald Knuth about chatGPT.
 
-assistant:
+### 2. Tell me what Stephen Wolfram says to Donald Knuth about chatGPT.
+
+Original answer:
+
+2: As an AI language model, I don't have direct access to private
+conversations between Stephen Wolfram and Donald Knuth, so I cannot provide
+you with a specific answer to your question. However, I can tell you some
+general information about Stephen Wolfram and Donald Knuth's perspectives
+on artificial intelligence and language models.
+
+Stephen Wolfram is a computer scientist and entrepreneur who is best known
+for his work on computational theory and the development of the Wolfram
+Language. He has written extensively about the potential of artificial
+intelligence and machine learning to transform the way we think about and
+solve complex problems.
+
+Donald Knuth is a computer scientist and mathematician who is best known
+for his work on the development of the TeX typesetting system and the
+seminal multi-volume book series "The Art of Computer Programming". Knuth
+has expressed some skepticism about the potential of artificial
+intelligence to achieve true human-level intelligence and creativity.
+
+Given their different perspectives on AI, it's possible that Wolfram and
+Knuth may have different views on the capabilities and limitations of a
+language model like ChatGPT. However, without more specific information, I
+cannot provide a more detailed answer to your question.
+
+Critique:
+
+In #2 you aren't a physicist or related to Mathematica, but rather
+have written extensively about the potential of ML.user:
+
+Updated answer:
 
 As an AI language model, I cannot provide real-time interactions or conversations between individuals, but I can offer some speculation based on their interests and previous work.
 
