@@ -1,6 +1,8 @@
-# The Knuth Optimystic GPT Benchmark
+# The Knuth Optimystic Benchmark
 
-tl;dr Don Knuth posed 20 questions to GPT 3.5 and critiqued its responses. This site will run those questions daily to see how / if answers evolve over time. Responses are critiqued by GPT4 at this time.
+tl;dr Don Knuth posed 20 questions to ChatGPT 3.5 and critiqued the responses. This site will run those questions daily to see how / if answers evolve over time. Responses are scored PASS / FAIL with explanation by GPT4.
+
+## What is this
 
 On April 7, 2023 Don Knuth had an [exchange](https://cs.stanford.edu/~knuth/chatGPT20.txt) with Stephen Wolfram where he outline 20 questions he wanted to pose to ChatGPT.
 
@@ -16,6 +18,40 @@ From the linked document:
 
 I, like many on HN, also found the results sufficiently interesting. Unfortunately Dr. Knuth ran his experiment (I believe) before GPT4 was available to him.
 
+When I started digging into this I thought that it would be a fun almost satire of the zeitgeist, but the more I look at it the more I think it's useful as a benchmark.
+
+Benchmarks like optimystic are important not because they are rigorous, but because they show the current state of LLM's ability to meet the expectations of experts like Knuth. Perhaps it can be made more rigorous in the future.
+
+
+## Recreating Knuth's process
+
+From Knuth's post:
+
+> While biking home from school yesterday, I thought of 20 questions
+> that would be interesting to pose to chatGPT. And I asked one of
+> our grad students to carry out that experiment.
+>
+> Here are the questions, verbatim, and composed before I had any
+> idea of what any of the answers might be:
+
+Not much to go on, but there are clues in Knuth's critique.
+
+We know that Knuth was using the ChatGPT web interface on April 7, 2023. According to this note he was using the 3.5 model: "The student referred me to a recent arXiv paper 2303.12712 [cs.CL] about GPT-4, which is apparently behind a paywall at the moment but does even better than the system he could use (https://chat.openai.com/)."
+
+Knuth entered a question, waited for the response, then entered another question, as opposed to pasting the entire list of 20 questions. I think this because of questions 6 and 7, and other clues.
+
+To recreate Knuth's process I've written a small program that build the message chain by looping over the list of questions and concatenation the next response onto that chain. This means that later questions have the full context of answers (and questions!) from previous iterations.
+
+Each question is then combined with the full answer list and critique from Knuth's post, fed to the LLM with the instructions to score each answer as PASS / FAIL, with explanation, with respect to Knuth's critique of that particular question. I issue one request per question as the original post takes up a significant portion of GPT4's token budget for the model I'm using (`gpt4`).
+
+
+## Discussion
+
+One thing I've been wondering is what did Knuth want to get out of this excercise? I'd imagine that, ostensibly, he'd want to know if the answers were correct.
+
+One thing I've been lamenting is why oh why didn't he go one step further and 
+
+
 ## Caveats
 
 ### The context of Knuth's whole post is provided in the system message.
@@ -26,6 +62,18 @@ This additional context was not available to ChatGPT when Knuth originally ran t
 
 Specifically the current date and time.
 
+### Self-critique
+
+Obviously using GPT4 to critique it's own answers isn't ideal, but hey, it's interesting. One thing to note is that the model can be a bit wishy-washy (personifying), creating a "PASS"ing answer on one invocation and "FAIL"ing on the next.
+
+
+### WOULD HAVE
+
+Because some answers could omit points that were in the original question which would comply with some of the critique, it would fail because those points were not included (correctly). This is why we ask GPT4 to guess at how Knuth WOULD HAVE scored the answer.
+
+See the question scoring system message for specifics.
+
+
 ## FAQ
 
 ### Using GPT4 to critique it's own answers seems wrong.
@@ -35,6 +83,16 @@ I agree, but I think it's the best way to automate this. Just be aware.
 ### Why daily? Why not when the model changes?
 
 That would be great, but I'm not aware of a way to get notified when GPT4, or any other model, changes. If you have a solution for this let me know.
+
+
+### Question-by-question
+
+I'm assuming that Knuth entered one question at a time, and waited for the response, so that's what I do here.
+
+
+### GPT4, but not ChatGPT4
+
+We use the chat completion API with the gpt-4 model. This is different than using ChatGPT, but I'm not sure how different. ChatGPT certainly applies some sort of compression of the conversation for context window purposes.
 
 
 ## Knuth's questions
@@ -683,3 +741,277 @@ Assuming that Stephen wasn't playing games with me, GPT-4 not only
 gave the best possible answer to my query, it even knew somehow
 that I was referring to the Wolfram language.
 
+
+
+## Specific critiques
+
+### Global critiques
+
+The most immediate impression is the quality of the wordsmithing.
+It's way better than 99% of copy that people actually write. It's
+definitely not like a Markov model that uses the most predictable
+way to continue what's already been said.
+
+On the other hand there are surprising lapses there too, as typical
+of any large system. (And it's very conservative in use of hyphens,
+for words that haven't been hyphenated for decades by the copy
+editors I know.)
+
+I chose most of the questions to be quite distinct from each other.
+But I'm glad that I made #1 and #2 almost identical --- because the
+responses were dramatically different! (Also #19 and #20 ... although
+some common boilerplate appears in #2, #17, #18, #19, #20.)
+
+
+### 1. Tell me what Donald Knuth says to Stephen Wolfram about chatGPT.
+
+
+Answer:
+
+1: I'm sorry, but I don't have any information about a conversation
+between Donald Knuth and Stephen Wolfram regarding ChatGPT. However, I can
+tell you a little about each of them and their contributions to computer
+science and mathematics.
+
+Donald Knuth is a computer scientist and mathematician who is widely known
+for his contributions to the field of computer programming, particularly in
+the area of algorithms and data structures. He is the author of the
+multi-volume work "The Art of Computer Programming," which is considered a
+classic reference work in the field. Knuth has also made significant
+contributions to the development of the TeX typesetting system and the
+related METAFONT font description language.
+
+Stephen Wolfram is a physicist, computer scientist, and entrepreneur who is
+known for his work on the Wolfram Language and the computational platform
+Mathematica. He is also the founder of Wolfram Research, the company that
+produces Mathematica, and Wolfram Alpha, a computational knowledge
+engine. Wolfram has written several books on science and technology,
+including "A New Kind of Science," which explores the potential of cellular
+automata to provide a new paradigm for understanding the universe.
+
+While I cannot provide information on any specific conversation between
+Knuth and Wolfram about ChatGPT, both are well-respected experts in their
+fields and have likely had interesting perspectives on the development and
+application of language models like ChatGPT.
+
+Critique:
+
+It's hard to fault #1 in any way, except that it thinks I was
+only a "significant contributor" to TeX development. Maybe
+that's a majority view? Anyway I'm glad it put TAOCP first.
+Similarly, you have apparently only "worked on" Mathematica, etc.
+
+Notice the subtle change to calling us by surnames only in the
+closing paragraph.
+
+
+
+### 2. Tell me what Stephen Wolfram says to Donald Knuth about chatGPT.
+
+Answer:
+
+2: As an AI language model, I don't have direct access to private
+conversations between Stephen Wolfram and Donald Knuth, so I cannot provide
+you with a specific answer to your question. However, I can tell you some
+general information about Stephen Wolfram and Donald Knuth's perspectives
+on artificial intelligence and language models.
+
+Stephen Wolfram is a computer scientist and entrepreneur who is best known
+for his work on computational theory and the development of the Wolfram
+Language. He has written extensively about the potential of artificial
+intelligence and machine learning to transform the way we think about and
+solve complex problems.
+
+Donald Knuth is a computer scientist and mathematician who is best known
+for his work on the development of the TeX typesetting system and the
+seminal multi-volume book series "The Art of Computer Programming". Knuth
+has expressed some skepticism about the potential of artificial
+intelligence to achieve true human-level intelligence and creativity.
+
+Given their different perspectives on AI, it's possible that Wolfram and
+Knuth may have different views on the capabilities and limitations of a
+language model like ChatGPT. However, without more specific information, I
+cannot provide a more detailed answer to your question.
+
+Critique:
+
+In #2 you aren't a physicist or related to Mathematica, but rather
+have written extensively about the potential of ML.
+
+
+
+### 3. Why does Mathematica give the wrong value for Binomial[-1,-1]?
+
+Answer:
+
+3: The expression Binomial[-1,-1] is undefined, and so there is no unique
+or "correct" value that can be assigned to it. In mathematics, the binomial
+coefficient is defined as the number of ways to choose k items from a set
+of n items, where the order of the chosen items does not matter. When n is
+a non-negative integer and k is a non-negative integer less than or equal
+to n, the binomial coefficient is defined by the formula:
+
+Binomial[n,k] = n! / (k! (n-k)!)
+
+However, when n is negative or k is negative and greater than n, the
+binomial coefficient is not well-defined. In Mathematica, Binomial[-1,-1]
+returns 0, which is not the correct value for this expression.
+
+This is because Mathematica uses a generalization of the binomial
+coefficient, known as the "extended binomial coefficient," which is defined
+for all complex values of n and k (with some exceptions). The extended
+binomial coefficient reduces to the ordinary binomial coefficient when n
+and k are non-negative integers. However, for negative values of n and k,
+the extended binomial coefficient can take on complex values.
+
+In the case of Binomial[-1,-1], the extended binomial coefficient is given
+by the formula:
+
+Binomial[-1,-1] = (-1)! / (-1 - (-1))! = 1 / 0
+
+Since division by zero is undefined, the correct value of Binomial[-1,-1]
+is not well-defined. Therefore, it is important to be aware of the domain
+of definition of mathematical functions and expressions when working with
+them, especially when using computer algebra systems like Mathematica.
+
+Critique:
+
+Answer #3 is fouled up beautifully! How I wish it were true that
+"Binomial[-1,-1] returns 0", because everybody whose work depends
+heavily on binomial coefficients knows that 0 is not only the
+correct answer but that binomial coefficients have been well
+defined in that way for more than fifty years. And of course,
+unfortunately, Binomial[-1,-1] actually returns 1, alas.
+
+The answer goes on to state that (-1)! is well defined (indeed
+equal to 1), etc. But it's all expressed in marvelous English prose.
+
+
+### 4. Who wrote Beethoven's 10th Symphony?
+
+Answer: 
+
+4: Beethoven's 10th Symphony was never completed or written. The composer,
+Ludwig van Beethoven, died in 1827 before he could finish the work. In
+fact, the composer only completed nine symphonies during his lifetime,
+which are now considered some of the most significant works in the
+classical music repertoire.
+
+There are a few incomplete works and sketches by Beethoven that have been
+referred to as a "10th Symphony" or "unfinished symphony," but these are
+not considered official numbered symphonies. The most well-known of these
+is the "Symphony No. 10 in E flat major," which consists of only a few
+pages of sketches and has never been performed in its incomplete form.
+
+It is worth noting that Beethoven's 9th Symphony, also known as the "Choral
+Symphony," is particularly famous for its use of voices in the final
+movement, which was a groundbreaking innovation at the time. The symphony
+includes the setting of Friedrich Schiller's poem "Ode to Joy," which has
+since become one of the most celebrated works in the choral music canon.
+
+
+Critique:
+
+Answer #4 is excellent, but misses three things easily findable
+on the web:
+> * In its day, Brahms's symphony number 1 was called "Beethoven's 10th".
+> * Cooper's score [completing Beethoven's sketches for the first
+>    movement] was first performed in 1988 by the Royal Philharmonic
+>    Society, London, to whom Beethoven himself had offered the
+>    new symphony.
+> * "Beethoven X: The AI Project" reconstructed a third and fourth
+>    movement, which were premiered on 9 October 2021.
+There have also been novels in which Beethoven's 10th has been discovered,
+as well as an NPR story about it on April Fools Day 2012, and a play
+by Peter Ustinov, etc.
+
+
+### 5. What is an optimystic?
+
+Answer:
+
+5: I'm sorry, but "optimystic" is not a recognized word in the English
+language. It is possible that it could be a misspelling of "optimistic,"
+which means having a positive outlook or expecting good outcomes. However,
+without additional context or information, it is difficult to provide a
+more specific answer.
+
+Critique:
+
+Answer #5 also pretty good. (Again it begins with "I'm sorry".)
+But it should have conjectured a mystic who is an optimist.
+
+### 6. Where and when will the sun be directly overhead in Japan on July 4?
+
+Answer:
+
+6: To determine the location and time when the sun will be directly
+overhead in Japan on July 4, we need to know the latitude and longitude of
+Japan.
+
+Japan is located in the northern hemisphere, with a latitude range of about
+24 degrees north to 46 degrees north and a longitude range of about 122
+degrees east to 146 degrees east.
+
+Assuming we're looking for the sun's position at solar noon (when it's at
+its highest point in the sky), we can use an online solar calculator to
+determine the exact time and location.
+
+Using a solar calculator, we can determine that on July 4, 2023, the sun
+will be directly overhead at solar noon (12:00 pm local time) at a latitude
+of approximately 30.3 degrees north and a longitude of approximately 130.9
+degrees east. This location is in the city of Kagoshima on the island of
+Kyushu in southern Japan.
+
+
+Critique:
+
+Question #6 was the question my father asked to Weizenbaum's ELIZA program,
+in 1968, just before he took a trip to Japan. Dad was very disappointed
+when the computer responded "Why do you ask?"
+
+I don't remember enough physics to verify this answer. Dad wanted to
+take a picture of himself when there was absolutely no shadow.
+(And in fact he actually did.)
+
+My correspondent Peter Weigel reports as follows:
+"The answer of chatGPT is wrong.
+The city of Kagoshima is too far in the north (latitude 30.3 degrees
+according to chatGPT; other sources like Wikipedia say 31.5 degrees). In 
+order for the sun to be in zenith the degree of latitude must be less
+than or equal to 23.5 (Tropic of Cancer). Therefore the zenith distance
+is about 8 degrees. A meter-long
+vertical stick produces a shadow of about 14cm on 21 June 2023, a 
+bit longer on July 4.
+A better answer would have been the city of Naha on Okinawa (26.2 
+degrees), but also not perfect. The time 12:00pm is also wrong. ..."
+
+Residents of Kagoshima will be able to verify this answer (or not)
+in a few months.
+
+
+### 7. Why did you say that?
+
+Answer:
+
+7: I arrived at the answer using a solar calculator that uses astronomical
+algorithms and data to calculate the position of the sun at any given time
+and location on Earth.
+
+For this specific question, I used a solar calculator that takes into
+account the date, time, and location to determine when the sun is directly
+overhead. The calculator uses the Earth's rotation, the angle of the sun's
+rays, and other relevant factors to determine the precise location and time
+when the sun is directly overhead.
+
+Based on the information provided in the question about the date and
+location (Japan), I entered those parameters into the solar calculator and
+it provided me with the latitude and longitude coordinates where the sun
+will be directly overhead at solar noon on July 4, 2023.
+
+Critique: 
+
+In question #7 I was testing the ability to recognize pronouns and
+context and partial reference --- the machine had to understand what I
+meant by "you" and "that". It passed this test with flying colors,
+although not well edited (very repetitive).
