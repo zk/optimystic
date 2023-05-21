@@ -1,6 +1,13 @@
+# Exported Figment test convo
+
+## System message
+
+
+
 ## About
 
-Timestamp: 2023-05-21T21:53:13.123Z
+Timestamp: 2023-05-21T21:55:41.523Z
+
 Model: GPT-4
 
 ## Conversation
