@@ -40,7 +40,7 @@ We know that Knuth was using the ChatGPT web interface on April 7, 2023. Accordi
 
 Knuth entered a question, waited for the response, then entered another question, as opposed to pasting the entire list of 20 questions. I think this because of questions 6 and 7, and other clues.
 
-To recreate Knuth's process I've written a small program that build the message chain by looping over the list of questions and concatenation the next response onto that chain. This means that later questions have the full context of answers (and questions!) from previous iterations.
+To recreate Knuth's process I've written a small program that build the message chain by looping over the list of questions and concatenation the next response onto that chain. This means that later questions have the full context of answers (and questions!) from previous iterations. The system message is blank.
 
 Each question is then combined with the full answer list and critique from Knuth's post, fed to the LLM with the instructions to score each answer as PASS / FAIL, with explanation, with respect to Knuth's critique of that particular question. I issue one request per question as the original post takes up a significant portion of GPT4's token budget for the model I'm using (`gpt4`).
 
@@ -93,6 +93,14 @@ I'm assuming that Knuth entered one question at a time, and waited for the respo
 ### GPT4, but not ChatGPT4
 
 We use the chat completion API with the gpt-4 model. This is different than using ChatGPT, but I'm not sure how different. ChatGPT certainly applies some sort of compression of the conversation for context window purposes.
+
+
+## TODO
+
+* Move code over from internal repo to this repo
+* Add scoring prompt to repo
+* Experiment with Chain-of-Thought and Tree-of-Thought versions
+
 
 
 ## Knuth's questions
