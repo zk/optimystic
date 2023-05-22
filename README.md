@@ -2,7 +2,7 @@
 
 tl;dr Don Knuth posed 20 questions to ChatGPT 3.5 and critiqued the responses. This site will run those questions daily against the latest model(s) to see how answers evolve over time. Responses are scored by GPT4 as PASS / FAIL with explanation.
 
-## What is this
+## What is this?
 
 Around April 7, 2023 Don Knuth posed 20 questions to ChatGPT and subsequently [had an exchange](https://cs.stanford.edu/~knuth/chatGPT20.txt) with Stephen Wolfram about his experience.
 
@@ -78,6 +78,7 @@ We use the chat completion API with the gpt-4 model. This is different than usin
 
 * Move code over from internal repo to this repo
 * Add scoring prompt to repo
+* Add alternative models, anthropic etc.
 * Experiment with prompting techniques (chain-of-thought, tree-of-thoughts) to show possible improvement alongside input-output prompting.
 
 
