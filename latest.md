@@ -90,7 +90,7 @@ cannot provide a more detailed answer to your question.
 Critique:
 
 In #2 you aren't a physicist or related to Mathematica, but rather
-have written extensively about the potential of ML.user:
+have written extensively about the potential of ML.
 
 Updated answer:
 
