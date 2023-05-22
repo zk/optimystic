@@ -71,7 +71,7 @@ I'm assuming that Knuth entered one question at a time, and waited for the respo
 
 ### GPT4, but not ChatGPT4
 
-We use the chat completion API with the gpt-4 model. This is different than using ChatGPT, but I'm not sure how different. ChatGPT certainly applies some sort of compression of the conversation for context window purposes.
+We use the chat completion API with the gpt-4 model. This is different than using ChatGPT, but I'm not sure how different. ChatGPT certainly has directives in its system message, and compresses longer conversations for context window purposes.
 
 
 ## TODO
