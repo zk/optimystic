@@ -38,13 +38,11 @@ From Knuth's post:
 
 Not much to go on, but there are clues in Knuth's critique.
 
-We know that Knuth was using the ChatGPT web interface on April 7, 2023. According to this note he was using the 3.5 model: "The student referred me to a recent arXiv paper 2303.12712 [cs.CL] about GPT-4, which is apparently behind a paywall at the moment but does even better than the system he could use (https://chat.openai.com/)."
-
-Knuth entered a question, waited for the response, then entered another question, as opposed to pasting the entire list of 20 questions. I think this because of questions 6 and 7, and other clues.
+I'm assuming that Knuth's grad student was using the ChatGPT web interface with the 3.5 model ("The student referred me to a recent arXiv paper 2303.12712 [cs.CL] about GPT-4, which is apparently behind a paywall at the moment but does even better than the system he could use (https://chat.openai.com/).") and entered questions one-by-one waiting for each response as opposed to entering the list of 20 questions all at once..
 
 To recreate Knuth's process I've written a small program that builds the message chain by looping over the list of questions. Note that later questions have the full context of answers (and questions!) from previous iterations. The system message is blank.
 
-Each question is then combined with the full answer list and critique from Knuth's post, fed to the LLM with the instructions to score each answer as PASS / FAIL, with explanation, with respect to Knuth's critique of that particular question. I issue one request per question as the original post takes up a significant portion of GPT4's token budget for the model I'm using (`gpt4`).
+Each question is then combined with the full answer list and critique from Knuth's post, fed to the LLM with the instructions to score each answer as PASS / FAIL, with explanation, based on Knuth's critique of that particular question. I issue one request per question as the original post takes up a significant portion of the GPT4 8k model's token budget.
 
 
 ## How to help
