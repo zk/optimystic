@@ -4,7 +4,7 @@ tl;dr Don Knuth posed 20 questions to ChatGPT 3.5 and critiqued the responses. T
 
 ## What is this
 
-On April 7, 2023 Don Knuth had an [exchange](https://cs.stanford.edu/~knuth/chatGPT20.txt) with Stephen Wolfram where he outline 20 questions he wanted to pose to ChatGPT.
+Around April 7, 2023 Don Knuth posed 20 questions to ChatGPT and subsequently [had an exchange](https://cs.stanford.edu/~knuth/chatGPT20.txt) with Stephen Wolfram about his experience.
 
 From the linked document:
 
@@ -16,7 +16,9 @@ From the linked document:
 > to a few friends the next day, and I've also been mentioning them in
 > conversation when the topic comes up.
 
-I, like many others on HN, also found the results sufficiently interesting! I also wondered how GPT4 would have fared so I created this benchmark. Interestingly, in working on this project I've come to realize we have the important bits: his questions and reactions to the generated answers.
+I, like many others on HN, also found the results [sufficiently interesting](https://news.ycombinator.com/item?id=36012360)! 
+
+My initial reaction was that he should have used GPT4 (interestingly, in working on this project I've come to realize we have the important bits: his questions and reaction to the generated answers).
 
 The Knuth Optimystic Benchmark aims to observe how well models satisfy the specific critiques Knuth made about the quality of answers he got for his questions over time. Once a day (week?) Knuth's 20 questions will be run against the latest model and resulting updated answers will be posted at [https://optimystic.ai/knuth](https://optimystic.ai/knuth).
 
