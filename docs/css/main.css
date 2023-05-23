@@ -12,5 +12,5 @@ a {
 }
 
 .question-heading:hover .heading-link {
-  display: flex;
+  display: inline;
 }
