@@ -16,7 +16,7 @@ From the linked document:
 > to a few friends the next day, and I've also been mentioning them in
 > conversation when the topic comes up.
 
-I, like many others on HN, also found the results [sufficiently interesting](https://news.ycombinator.com/item?id=36012360)! 
+I, like many others on HN, also found the results [sufficiently interesting](https://news.ycombinator.com/item?id=36012360). 
 
 My initial reaction was that he should have used GPT4 (interestingly, in working on this project I've come to realize we have the important bits: his questions and reaction to the generated answers).
 
@@ -47,7 +47,7 @@ Each question is then combined with the full answer list and critique from Knuth
 
 ## How to help
 
-Love this? Hate this? Did I miss anything? Let me know over on [twitter](https://twitter.com/heyzk) or in the GH issues. Specifically I'm interested in how to make this useful for the larger LLM / AI community.
+ Feedback via [twitter](https://twitter.com/heyzk) or GH issues would be very helpful. Specifically I'm interested in how to make this useful for the larger LLM / AI community.
 
 Second, I think it would be interesting to open this up to other experts, not just those in Computer Science. I'd love to hear who you'd find interesting so I can ask them which twenty (or ten, or five) questions they'd ask the AI. The only requirement is they're considered an expert in their field.
 
